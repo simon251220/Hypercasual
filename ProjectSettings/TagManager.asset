@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - End Line
+  - Floor
+  - Cylinder
   layers:
   - Default
   - TransparentFX
