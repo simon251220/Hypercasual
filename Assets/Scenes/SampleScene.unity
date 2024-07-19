@@ -324,6 +324,7 @@ GameObject:
   - component: {fileID: 279401163}
   - component: {fileID: 279401168}
   - component: {fileID: 279401169}
+  - component: {fileID: 279401170}
   m_Layer: 0
   m_Name: PlayerContainer
   m_TagString: Player
@@ -418,7 +419,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -5.07}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 368001718}
@@ -473,6 +474,24 @@ MonoBehaviour:
   invencible: 0
   uiTextPowerUp: {fileID: 368001719}
   animatorManager: {fileID: 1183935376}
+  bounceHelper: {fileID: 279401170}
+--- !u!114 &279401170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279401162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9193bf247bed875409ad3e4a95efdfd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleDuration: 0.2
+  scaleBounce: 1.2
+  scaleDurationStart: 0.2
+  scaleBounceStart: 1
+  ease: 27
 --- !u!1 &294380989
 GameObject:
   m_ObjectHideFlags: 0

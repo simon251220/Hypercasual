@@ -27,6 +27,8 @@ public class PlayerController : Singleton<PlayerController>
 
     [Header("Animation")]
     public AnimatorManager animatorManager;
+
+    public BounceHelper bounceHelper;
     private void Start()
     {
         _startPosition = transform.position; 
@@ -44,6 +46,15 @@ public class PlayerController : Singleton<PlayerController>
         transform.position = Vector3.Lerp(transform.position, _pos, speedLerp * Time.deltaTime);
     }
 
+    public void Bounce()
+    {
+        bounceHelper.Bounce();
+    }
+
+    public void BounceStart()
+    {
+        bounceHelper.BounceStart();
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag(tagEnemy))
@@ -79,6 +90,7 @@ public class PlayerController : Singleton<PlayerController>
     public void StartRun()
     {
         _canRun = true;
+        BounceStart();
         animatorManager.PlayAnim(AnimatorManager.AnimationType.RUN,_currentSpeed / _baseSpeedToAnimation);
     }
     #region POWER UPS

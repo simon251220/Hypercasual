@@ -33,7 +33,8 @@ public class ItenCollactableBase : MonoBehaviour
 
     protected virtual void Collect()
     {
-        if (graphicIten != null) graphicIten.SetActive(false); 
+        if (graphicIten != null) graphicIten.SetActive(false);
+        PlayerController.Instance.Bounce();
         Invoke("HideObject", timeToHide);
         OnCollect();
     }
