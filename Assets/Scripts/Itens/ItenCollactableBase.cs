@@ -47,7 +47,15 @@ public class ItenCollactableBase : MonoBehaviour
 
     protected virtual void OnCollect()
     {
-        if (particleSystem != null) particleSystem.Play();
+        if (particleSystem != null) 
+        {
+            
+            print("Oi");
+            particleSystem.transform.SetParent(null);
+            particleSystem.collision.AddPlane(GameObject.FindGameObjectWithTag("PlaneFloor").transform);
+            particleSystem.Play();
+            
+        }
         if (audioSource != null) audioSource.Play();
     }
 }
